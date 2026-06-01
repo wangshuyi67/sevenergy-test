@@ -101,17 +101,17 @@ function initParticles() {
 
   function createParticles() {
     particles = [];
-    const count = Math.min(Math.floor((canvas.width * canvas.height) / 15000), 80);
+    const count = Math.min(Math.floor((canvas.width * canvas.height) / 8000), 150);
 
     for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        radius: Math.random() * 1.5 + 0.5,
-        opacity: Math.random() * 0.4 + 0.1,
-        color: Math.random() > 0.7 ? '255, 215, 0' : '76, 175, 80'
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: Math.random() * 2.5 + 1,
+        opacity: Math.random() * 0.6 + 0.2,
+        color: Math.random() > 0.7 ? '212, 184, 150' : '76, 175, 80'
       });
     }
   }
@@ -143,8 +143,8 @@ function initParticles() {
         const dy = p.y - p2.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 150) {
-          const lineOpacity = (1 - dist / 150) * 0.12;
+        if (dist < 180) {
+          const lineOpacity = (1 - dist / 180) * 0.25;
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
