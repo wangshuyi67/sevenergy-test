@@ -1,27 +1,27 @@
 /* ============================================
-   SEVENERGY â€” Premium Energy Industry Design
+   SEVENERGY — Premium Energy Industry Design
    ============================================ */
 
 /* ---------- CSS Variables ---------- */
 :root {
-  --bg-deep: #0a1628;
-  --bg-dark: #0d1b2a;
-  --bg-card: #111d2e;
-  --bg-card-hover: #152238;
-  --text-primary: #e8edf3;
-  --text-secondary: #8a9bb5;
-  --text-muted: #5a6e87;
+  --bg-deep: #2a3444;
+  --bg-dark: #303c4e;
+  --bg-card: #374458;
+  --bg-card-hover: #3e4d62;
+  --text-primary: #f0f0f0;
+  --text-secondary: #a8b2c1;
+  --text-muted: #788599;
   --accent: #4caf50;
-  --accent-light: #8bc34a;
+  --accent-light: #66bb6a;
   --accent-glow: rgba(76, 175, 80, 0.15);
   --accent-soft: rgba(76, 175, 80, 0.08);
-  --gold: #ffd700;
-  --gold-soft: rgba(255, 215, 0, 0.1);
-  --glass-bg: rgba(17, 29, 46, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.06);
+  --gold: #d4b896;
+  --gold-soft: rgba(212, 184, 150, 0.10);
+  --glass-bg: rgba(48, 60, 78, 0.70);
+  --glass-border: rgba(255, 255, 255, 0.08);
   --glass-border-hover: rgba(76, 175, 80, 0.25);
-  --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 40px rgba(76, 175, 80, 0.1);
+  --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 40px rgba(76, 175, 80, 0.10);
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -78,7 +78,7 @@ img { max-width: 100%; display: block; }
 }
 
 .navbar.scrolled {
-  background: rgba(10, 22, 40, 0.92);
+  background: rgba(42, 52, 68, 0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--glass-border);
@@ -101,14 +101,13 @@ img { max-width: 100%; display: block; }
 }
 
 .nav-logo-img {
-  height: 36px;
+  height: 100px;
   width: auto;
-  mix-blend-mode: screen;
   transition: var(--transition);
 }
 
 .navbar.scrolled .nav-logo-img {
-  height: 32px;
+  height: 70px;
 }
 
 .nav-menu {
@@ -133,7 +132,7 @@ img { max-width: 100%; display: block; }
 
 .nav-link.nav-cta {
   background: var(--accent);
-  color: var(--bg-deep);
+  color: #fff;
   font-weight: 600;
   padding: 10px 24px;
   border-radius: 50px;
@@ -141,7 +140,7 @@ img { max-width: 100%; display: block; }
 }
 
 .nav-link.nav-cta:hover {
-  background: #5cc660;
+  background: #5cb860;
   box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
   transform: translateY(-1px);
 }
@@ -196,7 +195,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #0a1628 0%, #0d2137 30%, #0a1628 60%, #0f1923 100%);
+  background: linear-gradient(135deg, #2a3444 0%, #2f3d50 30%, #2a3444 60%, #2d3848 100%);
 }
 
 .hero-particles {
@@ -211,8 +210,8 @@ img { max-width: 100%; display: block; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(76, 175, 80, 0.04) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255, 215, 0, 0.02) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(76, 175, 80, 0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(212, 184, 150, 0.04) 0%, transparent 60%);
   z-index: 2;
 }
 
@@ -258,7 +257,7 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-outline {
-  -webkit-text-stroke: 1.5px #ffffff;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.85);
   -webkit-text-fill-color: transparent;
 }
 
@@ -279,7 +278,7 @@ img { max-width: 100%; display: block; }
   margin: 0 auto 40px;
   font-weight: 300;
   line-height: 1.7;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .hero-buttons {
@@ -330,8 +329,8 @@ img { max-width: 100%; display: block; }
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #4caf50, #6abf4e);
-  color: var(--bg-deep);
+  background: linear-gradient(135deg, #4caf50, #5cb860);
+  color: #ffffff;
   box-shadow: 0 4px 20px rgba(76, 175, 80, 0.25);
 }
 
@@ -343,8 +342,7 @@ img { max-width: 100%; display: block; }
 .btn-secondary {
   background: transparent;
   color: var(--text-primary);
-  border: 1.5px solid var(--glass-border);
-  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
 }
 
 .btn-secondary:hover {
@@ -1083,7 +1081,7 @@ img { max-width: 100%; display: block; }
     right: -100%;
     width: 280px;
     height: 100vh;
-    background: rgba(10, 22, 40, 0.98);
+    background: rgba(42, 52, 68, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
