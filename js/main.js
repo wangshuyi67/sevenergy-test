@@ -111,7 +111,7 @@ function initParticles() {
         vy: (Math.random() - 0.5) * 0.5,
         radius: Math.random() * 2.5 + 1,
         opacity: Math.random() * 0.6 + 0.2,
-        color: Math.random() > 0.7 ? '212, 184, 150' : '76, 175, 80'
+        color: Math.random() > 0.7 ? '42, 53, 64' : '76, 175, 80'
       });
     }
   }
