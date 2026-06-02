@@ -182,7 +182,7 @@ function initParticles() {
   });
 }
 
-/* ---------- Contact form ---------- */
+/* ---------- Contact form (Formspree) ---------- */
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
@@ -190,24 +190,45 @@ function initContactForm() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
-
-    // For now, show a confirmation message
-    // In production, this would send to a backend or email service
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
-
-    btn.textContent = 'Message Sent ✓';
-    btn.style.background = 'linear-gradient(135deg, #00d4aa, #ffd700)';
+    btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    setTimeout(() => {
-      btn.textContent = originalText;
-      btn.style.background = '';
-      btn.disabled = false;
-      form.reset();
-    }, 3000);
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        btn.textContent = 'Message Sent ✓';
+        btn.style.background = 'linear-gradient(135deg, #4caf50, #66bb6a)';
+        form.reset();
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 3000);
+      } else {
+        btn.textContent = 'Failed — Please try again';
+        btn.style.background = 'linear-gradient(135deg, #e53935, #ef5350)';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 3000);
+      }
+    })
+    .catch(() => {
+      btn.textContent = 'Failed — Please try again';
+      btn.style.background = 'linear-gradient(135deg, #e53935, #ef5350)';
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3000);
+    });
   });
 }
 
